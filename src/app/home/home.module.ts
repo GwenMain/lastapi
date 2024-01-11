@@ -14,6 +14,7 @@ import { HomePageRoutingModule } from './home-routing.module';
     IonicModule,
     HomePageRoutingModule
   ],
+  //added
   declarations: [HomePage]
 })
 export class HomePageModule {}

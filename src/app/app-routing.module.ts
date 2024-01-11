@@ -1,22 +1,37 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { HomePage } from './home/home.page';
+import { LastfmComponent } from './lastfm/lastfm.component';
 
 const routes: Routes = [
+  { path: 'lastfm', component: LastfmComponent },
+  { path: '', component: HomePage },
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}
+
+/*
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HomePage } from './home/home.page'; 
+import { LastfmComponent } from './lastfm/lastfm.component'; 
+
+const routes: Routes = [
+  { path: 'lastfm', component: LastfmComponent },
+  { path: '', component: HomePage },
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    path: 'artists',
+    loadChildren: () => import('./artists/artists.module').then( m => m.ArtistsPageModule)
   },
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
+*/

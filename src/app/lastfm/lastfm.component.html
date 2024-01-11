@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Last.fm
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="artistInfo">
+    <h2>{{ artistInfo.artist.name }}</h2>
+    <p>{{ artistInfo.artist.bio.summary }}</p>
+  </div>
+</ion-content>
