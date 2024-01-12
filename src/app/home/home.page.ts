@@ -59,8 +59,6 @@ export class HomePage {
     this.lastfmService.getOverallTopTracks().subscribe(
       (data) => {
         console.log('Overall Top Tracks Data:', data);
-
-        // Check if the necessary properties exist in the API response
         if (data && data.tracks && data.tracks.track) {
           this.overallTopTracks = data.tracks.track.slice(0, 5);
         } else {
@@ -91,7 +89,7 @@ export class HomePage {
   }
 
   getArtistUrl(artist: any): string {
-    return artist.url;
+    return artist.url || '';
   }
 
   clearResults() {

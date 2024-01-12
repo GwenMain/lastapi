@@ -41,9 +41,9 @@
             <ion-item *ngFor="let track of overallTopTracks">
               <ion-label>
                 {{track.name}}
-                <a href="getArtistUrl(track.artist)">
+                <a [href]="getArtistUrl(track.artist)">
                   <ion-label>
-                    <p>{{track.artist.name}}</p>
+                    <p>{{ track.artist.name }}</p>
                   </ion-label>
                 </a>
               </ion-label>
